@@ -1,0 +1,11 @@
+com\bigdata\dashboard\utils\DataService.class
+com\bigdata\dashboard\entity\AverageData.class
+com\bigdata\dashboard\repository\TemperatureRepository.class
+com\bigdata\dashboard\utils\AverageService.class
+com\bigdata\dashboard\repository\HumidityRepository.class
+com\bigdata\dashboard\SensorDataDashboard.class
+com\bigdata\dashboard\utils\WebSocketConfig.class
+com\bigdata\dashboard\entity\Temperature.class
+com\bigdata\dashboard\repository\AverageDataRepository.class
+com\bigdata\dashboard\entity\Humidity.class
+com\bigdata\dashboard\utils\Response.class

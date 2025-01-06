@@ -4,8 +4,7 @@ data/spark
 /.vscode
 .fake
 /kafka-producer/polygon-api-key.txt
+/kafka-producer/target/*
+.vscode
 
-Serving-Layer
-
-Spark-Processor\target\original-spark-crypto-processor-1.0.0.jar
-Spark-Processor\target\spark-crypto-processor-1.0.0.jar
+*.jar

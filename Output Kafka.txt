@@ -1,0 +1,12 @@
+Sent: org.example.SensorData@1a75e76a
+{"id":"2f889831-9259-4ee8-ae9e-1a5428123d7a","temperature":24.358275733599413,"humidity":80.51504529935269,"timestamp":"2024-12-18 15:25:19"}
+Sent: org.example.SensorData@5524cca1
+{"id":"efa95ee8-3d55-41c9-b8ea-339082d5e79d","temperature":23.411195161317142,"humidity":86.06571661058095,"timestamp":"2024-12-18 15:25:23"}
+Sent: org.example.SensorData@5032714f
+{"id":"761eee6c-bec3-43cc-a201-2bd2124f2a78","temperature":20.376289486642218,"humidity":86.87565795243796,"timestamp":"2024-12-18 15:25:25"}
+Sent: org.example.SensorData@48bb62
+{"id":"4be54db5-88f4-4bda-a771-8e5f4f5bc8cc","temperature":27.640860124710258,"humidity":88.99416898352632,"timestamp":"2024-12-18 15:25:28"}
+Sent: org.example.SensorData@353352b6
+{"id":"41213212-fb20-49a4-93d2-43be645570dc","temperature":27.18974116056484,"humidity":84.28162323005594,"timestamp":"2024-12-18 15:25:30"}
+Sent: org.example.SensorData@4681c175
+{"id":"6655e6cb-60ba-46d5-acc2-e5543bce3da7","temperature":21.931988401958275,"humidity":88.14151245745097,"timestamp":"2024-12-18 15:25:34"}

@@ -1,0 +1,13 @@
+Plan to Modify Your Kafka Producer
+Fetch Cryptocurrency Data:
+
+Replace the generateSensorData method with a method that queries the Polygon.io API using HTTP.
+Parse the JSON response to extract relevant fields.
+Adjust Kafka Producer Logic:
+
+Use the fetched cryptocurrency data to produce messages.
+Serialize and send the data in a format suitable for your Spark job (e.g., JSON).
+Adapt Spark and Cassandra:
+
+Update the Spark job to handle cryptocurrency data (if needed).
+Ensure Cassandra's schema aligns with the new data structure.

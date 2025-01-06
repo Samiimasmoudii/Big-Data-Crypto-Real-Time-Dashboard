@@ -1,0 +1,10 @@
+docker exec -it kafka-iot java -jar kafka-crypto-producer-2.0.0.jar
+log4j:WARN No appenders could be found for logger (kafka.utils.VerifiableProperties).
+log4j:WARN Please initialize the log4j system properly.
+Fetching and sending crypto events...
+Fetched Data: org.example.CryptoData@37271612
+Serialized Data: {"ticker":"BTCUSD","open":17141.0,"close":17177.98,"high":17400.0,"low":17102.97,"volume":37477.75170253636,"timestamp":1673222400000}
+Fetched Data: org.example.CryptoData@740fb309
+Serialized Data: {"ticker":"BTCUSD","open":17141.0,"close":17177.98,"high":17400.0,"low":17102.97,"volume":37477.75170253636,"timestamp":1673222400000}
+Fetched Data: org.example.CryptoData@2a8448fa
+Serialized Data: {"ticker":"BTCUSD","open":17141.0,"close":17177.98,"high":17400.0,"low":17102.97,"volume":37477.75170253636,"timestamp":1673222400000}

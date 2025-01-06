@@ -1,0 +1,7 @@
+/data/
+/.vscode
+.fake
+/kafka-producer/polygon-api-key.txt
+
+/Serving-Layer
+/Spark-Processor

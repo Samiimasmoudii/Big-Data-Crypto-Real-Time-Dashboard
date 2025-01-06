@@ -1,7 +1,11 @@
-/data/
+/data/datanode
+data/namenode
+data/spark
 /.vscode
 .fake
 /kafka-producer/polygon-api-key.txt
 
-/Serving-Layer
-/Spark-Processor
+Serving-Layer
+
+Spark-Processor\target\original-spark-crypto-processor-1.0.0.jar
+Spark-Processor\target\spark-crypto-processor-1.0.0.jar

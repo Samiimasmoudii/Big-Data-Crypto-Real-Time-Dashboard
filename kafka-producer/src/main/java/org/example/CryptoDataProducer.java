@@ -45,7 +45,17 @@ public class CryptoDataProducer {
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Accept", "application/json");
-
+    
+            int responseCode = connection.getResponseCode();
+            
+            // Handle rate-limiting with HTTP status 429
+            if (responseCode == 429) {
+                System.out.println("Rate limit exceeded. Sleeping for 5 seconds...");
+                Thread.sleep(5000); // Sleep for 5 seconds
+                return fetchCryptoData(apiKey); // Retry the request after the delay
+            }
+    
+            // Read the response
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             StringBuilder response = new StringBuilder();
             String line;
@@ -53,7 +63,7 @@ public class CryptoDataProducer {
                 response.append(line);
             }
             reader.close();
-
+    
             // Parse JSON response
             JSONObject jsonResponse = new JSONObject(response.toString());
             if ("OK".equals(jsonResponse.getString("status"))) {
@@ -76,4 +86,5 @@ public class CryptoDataProducer {
         }
         return null;
     }
+    
 }

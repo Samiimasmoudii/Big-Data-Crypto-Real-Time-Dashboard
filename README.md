@@ -54,7 +54,7 @@ Copy and execeute the kafka producer
 
 ```bash
 docker cp kafka-producer-1.0.0.jar kafka-iot:/
-docker exec -it kafka-iot java -jar kafka-producer-1.0.0.jar
+docker exec -it kafka-iot java -jar kafka-crypto-producer-1.0.0.jar
 ```
 
 Copy And execute the spark producer

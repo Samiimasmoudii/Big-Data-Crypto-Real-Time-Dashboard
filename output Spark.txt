@@ -1,0 +1,458 @@
+
+Time: 1736280590000 ms
+-------------------------------------------
+org.example.entity.CryptoData@1fb8cea
+
+25/01/07 20:09:50 INFO JobScheduler: Starting job streaming job 1736280590000 ms.1 from job set of time 1736280590000 ms    
+25/01/07 20:09:50 INFO SparkContext: Starting job: isEmpty at StreamProcessor.java:60
+25/01/07 20:09:50 INFO DAGScheduler: Got job 50 (isEmpty at StreamProcessor.java:60) with 1 output partitions
+25/01/07 20:09:50 INFO DAGScheduler: Final stage: ResultStage 50 (isEmpty at StreamProcessor.java:60)
+25/01/07 20:09:50 INFO DAGScheduler: Parents of final stage: List()
+25/01/07 20:09:50 INFO DAGScheduler: Missing parents: List()
+25/01/07 20:09:50 INFO DAGScheduler: Submitting ResultStage 50 (MapPartitionsRDD[56] at map at StreamProcessor.java:56), which has no missing parents
+25/01/07 20:09:50 INFO MemoryStore: Block broadcast_50 stored as values in memory (estimated size 4.9 KiB, free 434.4 MiB)  
+25/01/07 20:09:50 INFO MemoryStore: Block broadcast_50_piece0 stored as bytes in memory (estimated size 2.8 KiB, free 434.4 MiB)
+25/01/07 20:09:50 INFO BlockManagerInfo: Added broadcast_50_piece0 in memory on spark-master:37749 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:09:50 INFO SparkContext: Created broadcast 50 from broadcast at DAGScheduler.scala:1200
+25/01/07 20:09:50 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 50 (MapPartitionsRDD[56] at map at StreamProcessor.java:56) (first 15 tasks are for partitions Vector(0))
+25/01/07 20:09:50 INFO TaskSchedulerImpl: Adding task set 50.0 with 1 tasks
+25/01/07 20:09:50 INFO TaskSetManager: Starting task 0.0 in stage 50.0 (TID 50, 172.23.0.5, executor 0, partition 0, PROCESS_LOCAL, 7236 bytes)
+25/01/07 20:09:50 INFO BlockManagerInfo: Added broadcast_50_piece0 in memory on 172.23.0.5:33419 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:09:50 INFO CheckpointWriter: Deleting hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280540000.bk
+25/01/07 20:09:50 INFO CheckpointWriter: Checkpoint for time 1736280590000 ms saved to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280590000', took 5742 bytes and 507 ms
+25/01/07 20:09:50 INFO TaskSetManager: Finished task 0.0 in stage 50.0 (TID 50) in 475 ms on 172.23.0.5 (executor 0) (1/1)
+25/01/07 20:09:50 INFO TaskSchedulerImpl: Removed TaskSet 50.0, whose tasks have all completed, from pool
+25/01/07 20:09:50 INFO DAGScheduler: ResultStage 50 (isEmpty at StreamProcessor.java:60) finished in 0.489 s
+25/01/07 20:09:50 INFO DAGScheduler: Job 50 is finished. Cancelling potential speculative or zombie tasks for this job      
+25/01/07 20:09:50 INFO TaskSchedulerImpl: Killing all running tasks in stage 50: Stage finished
+25/01/07 20:09:50 INFO DAGScheduler: Job 50 finished: isEmpty at StreamProcessor.java:60, took 0.494809 s
+25/01/07 20:09:50 INFO SparkContext: Starting job: collect at StreamProcessor.java:62
+25/01/07 20:09:50 INFO DAGScheduler: Got job 51 (collect at StreamProcessor.java:62) with 1 output partitions
+25/01/07 20:09:50 INFO DAGScheduler: Final stage: ResultStage 51 (collect at StreamProcessor.java:62)
+25/01/07 20:09:50 INFO DAGScheduler: Parents of final stage: List()
+25/01/07 20:09:50 INFO DAGScheduler: Missing parents: List()
+25/01/07 20:09:50 INFO DAGScheduler: Submitting ResultStage 51 (MapPartitionsRDD[56] at map at StreamProcessor.java:56), which has no missing parents
+25/01/07 20:09:50 INFO MemoryStore: Block broadcast_51 stored as values in memory (estimated size 4.9 KiB, free 434.4 MiB)  
+25/01/07 20:09:50 INFO MemoryStore: Block broadcast_51_piece0 stored as bytes in memory (estimated size 2.8 KiB, free 434.4 MiB)
+25/01/07 20:09:50 INFO BlockManagerInfo: Added broadcast_51_piece0 in memory on spark-master:37749 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:09:50 INFO SparkContext: Created broadcast 51 from broadcast at DAGScheduler.scala:1200
+25/01/07 20:09:50 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 51 (MapPartitionsRDD[56] at map at StreamProcessor.java:56) (first 15 tasks are for partitions Vector(0))
+25/01/07 20:09:50 INFO TaskSchedulerImpl: Adding task set 51.0 with 1 tasks
+25/01/07 20:09:50 INFO TaskSetManager: Starting task 0.0 in stage 51.0 (TID 51, 172.23.0.5, executor 0, partition 0, PROCESS_LOCAL, 7236 bytes)
+25/01/07 20:09:50 INFO BlockManagerInfo: Added broadcast_51_piece0 in memory on 172.23.0.5:33419 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:09:51 INFO TaskSetManager: Finished task 0.0 in stage 51.0 (TID 51) in 486 ms on 172.23.0.5 (executor 0) (1/1)
+25/01/07 20:09:51 INFO TaskSchedulerImpl: Removed TaskSet 51.0, whose tasks have all completed, from pool
+25/01/07 20:09:51 INFO DAGScheduler: ResultStage 51 (collect at StreamProcessor.java:62) finished in 0.493 s
+25/01/07 20:09:51 INFO DAGScheduler: Job 51 is finished. Cancelling potential speculative or zombie tasks for this job      
+25/01/07 20:09:51 INFO TaskSchedulerImpl: Killing all running tasks in stage 51: Stage finished
+25/01/07 20:09:51 INFO DAGScheduler: Job 51 finished: collect at StreamProcessor.java:62, took 0.496802 s
+Average Crypto Price: [98384.32]
+25/01/07 20:09:51 INFO JobScheduler: Finished job streaming job 1736280590000 ms.1 from job set of time 1736280590000 ms    
+25/01/07 20:09:51 INFO JobScheduler: Total delay: 1.085 s for time 1736280590000 ms (execution: 1.077 s)
+25/01/07 20:09:51 INFO MapPartitionsRDD: Removing RDD 52 from persistence list
+25/01/07 20:09:51 INFO BlockManager: Removing RDD 52
+25/01/07 20:09:51 INFO KafkaRDD: Removing RDD 51 from persistence list
+25/01/07 20:09:51 INFO BlockManager: Removing RDD 51
+25/01/07 20:09:51 INFO MapPartitionsRDD: Removing RDD 53 from persistence list
+25/01/07 20:09:51 INFO JobGenerator: Checkpointing graph for time 1736280590000 ms
+25/01/07 20:09:51 INFO DStreamGraph: Updating checkpoint data for time 1736280590000 ms
+25/01/07 20:09:51 INFO BlockManager: Removing RDD 53
+25/01/07 20:09:51 INFO DStreamGraph: Updated checkpoint data for time 1736280590000 ms
+25/01/07 20:09:51 INFO CheckpointWriter: Submitted checkpoint of time 1736280590000 ms to writer queue
+25/01/07 20:09:51 INFO CheckpointWriter: Saving checkpoint for time 1736280590000 ms to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280590000'
+25/01/07 20:09:51 INFO CheckpointWriter: Deleting hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280540000
+25/01/07 20:09:51 INFO CheckpointWriter: Checkpoint for time 1736280590000 ms saved to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280590000', took 5693 bytes and 461 ms
+25/01/07 20:09:51 INFO DStreamGraph: Clearing checkpoint data for time 1736280590000 ms
+25/01/07 20:09:51 INFO DStreamGraph: Cleared checkpoint data for time 1736280590000 ms
+25/01/07 20:09:51 INFO ReceivedBlockTracker: Deleting batches:
+25/01/07 20:09:51 INFO FileBasedWriteAheadLog_ReceivedBlockTracker: Attempting to clear 0 old log files in hdfs://namenode:8020/lambda-arch/checkpoint/receivedBlockMetadata older than 1736280580000:
+25/01/07 20:09:51 INFO InputInfoTracker: remove old batch metadata: 1736280570000 ms
+25/01/07 20:10:00 INFO SubscriptionState: [Consumer clientId=consumer-crypto_topic-1, groupId=crypto_topic] Seeking to LATEST offset of partition crypto_topic-0
+25/01/07 20:10:00 INFO SubscriptionState: [Consumer clientId=consumer-crypto_topic-1, groupId=crypto_topic] Resetting offset for partition crypto_topic-0 to position FetchPosition{offset=150, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1001 rack: null)], epoch=absent}}.
+25/01/07 20:10:00 INFO JobScheduler: Added jobs for time 1736280600000 ms
+25/01/07 20:10:00 INFO JobGenerator: Checkpointing graph for time 1736280600000 ms
+25/01/07 20:10:00 INFO DStreamGraph: Updating checkpoint data for time 1736280600000 ms
+25/01/07 20:10:00 INFO JobScheduler: Starting job streaming job 1736280600000 ms.0 from job set of time 1736280600000 ms    
+25/01/07 20:10:00 INFO DStreamGraph: Updated checkpoint data for time 1736280600000 ms
+25/01/07 20:10:00 INFO CheckpointWriter: Submitted checkpoint of time 1736280600000 ms to writer queue
+25/01/07 20:10:00 INFO CheckpointWriter: Saving checkpoint for time 1736280600000 ms to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280600000'
+25/01/07 20:10:00 INFO SparkContext: Starting job: print at StreamProcessor.java:53
+25/01/07 20:10:00 INFO DAGScheduler: Got job 52 (print at StreamProcessor.java:53) with 1 output partitions
+25/01/07 20:10:00 INFO DAGScheduler: Final stage: ResultStage 52 (print at StreamProcessor.java:53)
+25/01/07 20:10:00 INFO DAGScheduler: Parents of final stage: List()
+25/01/07 20:10:00 INFO DAGScheduler: Missing parents: List()
+25/01/07 20:10:00 INFO DAGScheduler: Submitting ResultStage 52 (MapPartitionsRDD[58] at map at StreamProcessor.java:52), which has no missing parents
+25/01/07 20:10:00 INFO MemoryStore: Block broadcast_52 stored as values in memory (estimated size 4.6 KiB, free 434.4 MiB)  
+25/01/07 20:10:00 INFO MemoryStore: Block broadcast_52_piece0 stored as bytes in memory (estimated size 2.7 KiB, free 434.3 MiB)
+25/01/07 20:10:00 INFO BlockManagerInfo: Added broadcast_52_piece0 in memory on spark-master:37749 (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO SparkContext: Created broadcast 52 from broadcast at DAGScheduler.scala:1200
+25/01/07 20:10:00 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 52 (MapPartitionsRDD[58] at map at StreamProcessor.java:52) (first 15 tasks are for partitions Vector(0))
+25/01/07 20:10:00 INFO TaskSchedulerImpl: Adding task set 52.0 with 1 tasks
+25/01/07 20:10:00 INFO BlockManagerInfo: Removed broadcast_46_piece0 on spark-master:37749 in memory (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO BlockManagerInfo: Removed broadcast_46_piece0 on 172.23.0.5:33419 in memory (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO TaskSetManager: Starting task 0.0 in stage 52.0 (TID 52, 172.23.0.5, executor 0, partition 0, PROCESS_LOCAL, 7236 bytes)
+25/01/07 20:10:00 INFO BlockManagerInfo: Removed broadcast_47_piece0 on spark-master:37749 in memory (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO BlockManagerInfo: Removed broadcast_47_piece0 on 172.23.0.5:33419 in memory (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO BlockManagerInfo: Added broadcast_52_piece0 in memory on 172.23.0.5:33419 (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO CheckpointWriter: Deleting hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280550000.bk
+25/01/07 20:10:00 INFO CheckpointWriter: Checkpoint for time 1736280600000 ms saved to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280600000', took 5740 bytes and 121 ms
+25/01/07 20:10:00 INFO BlockManagerInfo: Removed broadcast_51_piece0 on spark-master:37749 in memory (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO BlockManagerInfo: Removed broadcast_51_piece0 on 172.23.0.5:33419 in memory (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO TaskSetManager: Finished task 0.0 in stage 52.0 (TID 52) in 80 ms on 172.23.0.5 (executor 0) (1/1)   
+25/01/07 20:10:00 INFO TaskSchedulerImpl: Removed TaskSet 52.0, whose tasks have all completed, from pool 
+25/01/07 20:10:00 INFO DAGScheduler: ResultStage 52 (print at StreamProcessor.java:53) finished in 0.116 s
+25/01/07 20:10:00 INFO BlockManagerInfo: Removed broadcast_48_piece0 on spark-master:37749 in memory (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO DAGScheduler: Job 52 is finished. Cancelling potential speculative or zombie tasks for this job      
+25/01/07 20:10:00 INFO BlockManagerInfo: Removed broadcast_48_piece0 on 172.23.0.5:33419 in memory (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO BlockManagerInfo: Removed broadcast_50_piece0 on spark-master:37749 in memory (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO BlockManagerInfo: Removed broadcast_50_piece0 on 172.23.0.5:33419 in memory (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO TaskSchedulerImpl: Killing all running tasks in stage 52: Stage finished
+25/01/07 20:10:00 INFO DAGScheduler: Job 52 finished: print at StreamProcessor.java:53, took 0.135534 s
+-------------------------------------------
+Time: 1736280600000 ms
+-------------------------------------------
+
+25/01/07 20:10:00 INFO JobScheduler: Finished job streaming job 1736280600000 ms.0 from job set of time 1736280600000 ms    
+25/01/07 20:10:00 INFO JobScheduler: Starting job streaming job 1736280600000 ms.1 from job set of time 1736280600000 ms    
+25/01/07 20:10:00 INFO BlockManagerInfo: Removed broadcast_49_piece0 on spark-master:37749 in memory (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO SparkContext: Starting job: isEmpty at StreamProcessor.java:60
+25/01/07 20:10:00 INFO BlockManagerInfo: Removed broadcast_49_piece0 on 172.23.0.5:33419 in memory (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO DAGScheduler: Got job 53 (isEmpty at StreamProcessor.java:60) with 1 output partitions
+25/01/07 20:10:00 INFO DAGScheduler: Final stage: ResultStage 53 (isEmpty at StreamProcessor.java:60)
+25/01/07 20:10:00 INFO DAGScheduler: Parents of final stage: List()
+25/01/07 20:10:00 INFO DAGScheduler: Missing parents: List()
+25/01/07 20:10:00 INFO DAGScheduler: Submitting ResultStage 53 (MapPartitionsRDD[59] at map at StreamProcessor.java:56), which has no missing parents
+25/01/07 20:10:00 INFO MemoryStore: Block broadcast_53 stored as values in memory (estimated size 4.9 KiB, free 434.4 MiB)  
+25/01/07 20:10:00 INFO MemoryStore: Block broadcast_53_piece0 stored as bytes in memory (estimated size 2.8 KiB, free 434.4 MiB)
+25/01/07 20:10:00 INFO BlockManagerInfo: Added broadcast_53_piece0 in memory on spark-master:37749 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO SparkContext: Created broadcast 53 from broadcast at DAGScheduler.scala:1200
+25/01/07 20:10:00 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 53 (MapPartitionsRDD[59] at map at StreamProcessor.java:56) (first 15 tasks are for partitions Vector(0))
+25/01/07 20:10:00 INFO TaskSchedulerImpl: Adding task set 53.0 with 1 tasks
+25/01/07 20:10:00 INFO TaskSetManager: Starting task 0.0 in stage 53.0 (TID 53, 172.23.0.5, executor 0, partition 0, PROCESS_LOCAL, 7236 bytes)
+25/01/07 20:10:00 INFO BlockManagerInfo: Added broadcast_53_piece0 in memory on 172.23.0.5:33419 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:00 INFO TaskSetManager: Finished task 0.0 in stage 53.0 (TID 53) in 24 ms on 172.23.0.5 (executor 0) (1/1)   
+25/01/07 20:10:00 INFO TaskSchedulerImpl: Removed TaskSet 53.0, whose tasks have all completed, from pool
+25/01/07 20:10:00 INFO DAGScheduler: ResultStage 53 (isEmpty at StreamProcessor.java:60) finished in 0.032 s
+25/01/07 20:10:00 INFO DAGScheduler: Job 53 is finished. Cancelling potential speculative or zombie tasks for this job      
+25/01/07 20:10:00 INFO TaskSchedulerImpl: Killing all running tasks in stage 53: Stage finished
+25/01/07 20:10:00 INFO DAGScheduler: Job 53 finished: isEmpty at StreamProcessor.java:60, took 0.036644 s
+25/01/07 20:10:00 INFO JobScheduler: Finished job streaming job 1736280600000 ms.1 from job set of time 1736280600000 ms    
+25/01/07 20:10:00 INFO JobScheduler: Total delay: 0.226 s for time 1736280600000 ms (execution: 0.199 s)
+25/01/07 20:10:00 INFO MapPartitionsRDD: Removing RDD 55 from persistence list
+25/01/07 20:10:00 INFO BlockManager: Removing RDD 55
+25/01/07 20:10:00 INFO KafkaRDD: Removing RDD 54 from persistence list
+25/01/07 20:10:00 INFO MapPartitionsRDD: Removing RDD 56 from persistence list
+25/01/07 20:10:00 INFO BlockManager: Removing RDD 54
+25/01/07 20:10:00 INFO JobGenerator: Checkpointing graph for time 1736280600000 ms
+25/01/07 20:10:00 INFO DStreamGraph: Updating checkpoint data for time 1736280600000 ms
+25/01/07 20:10:00 INFO DStreamGraph: Updated checkpoint data for time 1736280600000 ms
+25/01/07 20:10:00 INFO BlockManager: Removing RDD 56
+25/01/07 20:10:00 INFO CheckpointWriter: Submitted checkpoint of time 1736280600000 ms to writer queue
+25/01/07 20:10:00 INFO CheckpointWriter: Saving checkpoint for time 1736280600000 ms to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280600000'
+25/01/07 20:10:00 INFO CheckpointWriter: Deleting hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280550000
+25/01/07 20:10:00 INFO CheckpointWriter: Checkpoint for time 1736280600000 ms saved to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280600000', took 5693 bytes and 63 ms
+25/01/07 20:10:00 INFO DStreamGraph: Clearing checkpoint data for time 1736280600000 ms
+25/01/07 20:10:00 INFO DStreamGraph: Cleared checkpoint data for time 1736280600000 ms
+25/01/07 20:10:00 INFO ReceivedBlockTracker: Deleting batches:
+25/01/07 20:10:00 INFO FileBasedWriteAheadLog_ReceivedBlockTracker: Attempting to clear 0 old log files in hdfs://namenode:8020/lambda-arch/checkpoint/receivedBlockMetadata older than 1736280590000:
+25/01/07 20:10:00 INFO InputInfoTracker: remove old batch metadata: 1736280580000 ms
+25/01/07 20:10:10 INFO SubscriptionState: [Consumer clientId=consumer-crypto_topic-1, groupId=crypto_topic] Seeking to LATEST offset of partition crypto_topic-0
+25/01/07 20:10:10 INFO SubscriptionState: [Consumer clientId=consumer-crypto_topic-1, groupId=crypto_topic] Resetting offset for partition crypto_topic-0 to position FetchPosition{offset=151, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1001 rack: null)], epoch=absent}}.
+25/01/07 20:10:10 INFO JobScheduler: Added jobs for time 1736280610000 ms
+25/01/07 20:10:10 INFO JobGenerator: Checkpointing graph for time 1736280610000 ms
+25/01/07 20:10:10 INFO DStreamGraph: Updating checkpoint data for time 1736280610000 ms
+25/01/07 20:10:10 INFO JobScheduler: Starting job streaming job 1736280610000 ms.0 from job set of time 1736280610000 ms    
+25/01/07 20:10:10 INFO DStreamGraph: Updated checkpoint data for time 1736280610000 ms
+25/01/07 20:10:10 INFO CheckpointWriter: Submitted checkpoint of time 1736280610000 ms to writer queue
+25/01/07 20:10:10 INFO CheckpointWriter: Saving checkpoint for time 1736280610000 ms to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280610000'
+25/01/07 20:10:10 INFO SparkContext: Starting job: print at StreamProcessor.java:53
+25/01/07 20:10:10 INFO DAGScheduler: Got job 54 (print at StreamProcessor.java:53) with 1 output partitions
+25/01/07 20:10:10 INFO DAGScheduler: Final stage: ResultStage 54 (print at StreamProcessor.java:53)
+25/01/07 20:10:10 INFO DAGScheduler: Parents of final stage: List()
+25/01/07 20:10:10 INFO DAGScheduler: Missing parents: List()
+25/01/07 20:10:10 INFO DAGScheduler: Submitting ResultStage 54 (MapPartitionsRDD[61] at map at StreamProcessor.java:52), which has no missing parents
+25/01/07 20:10:10 INFO MemoryStore: Block broadcast_54 stored as values in memory (estimated size 4.6 KiB, free 434.4 MiB)  
+25/01/07 20:10:10 INFO MemoryStore: Block broadcast_54_piece0 stored as bytes in memory (estimated size 2.7 KiB, free 434.4 MiB)
+25/01/07 20:10:10 INFO BlockManagerInfo: Added broadcast_54_piece0 in memory on spark-master:37749 (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:10 INFO SparkContext: Created broadcast 54 from broadcast at DAGScheduler.scala:1200
+25/01/07 20:10:10 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 54 (MapPartitionsRDD[61] at map at StreamProcessor.java:52) (first 15 tasks are for partitions Vector(0))
+25/01/07 20:10:10 INFO TaskSchedulerImpl: Adding task set 54.0 with 1 tasks
+25/01/07 20:10:10 INFO TaskSetManager: Starting task 0.0 in stage 54.0 (TID 54, 172.23.0.5, executor 0, partition 0, PROCESS_LOCAL, 7236 bytes)
+25/01/07 20:10:10 INFO BlockManagerInfo: Added broadcast_54_piece0 in memory on 172.23.0.5:33419 (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:10 INFO TaskSetManager: Finished task 0.0 in stage 54.0 (TID 54) in 46 ms on 172.23.0.5 (executor 0) (1/1)
+25/01/07 20:10:10 INFO TaskSchedulerImpl: Removed TaskSet 54.0, whose tasks have all completed, from pool
+25/01/07 20:10:10 INFO DAGScheduler: ResultStage 54 (print at StreamProcessor.java:53) finished in 0.054 s
+25/01/07 20:10:10 INFO DAGScheduler: Job 54 is finished. Cancelling potential speculative or zombie tasks for this job      
+25/01/07 20:10:10 INFO TaskSchedulerImpl: Killing all running tasks in stage 54: Stage finished
+25/01/07 20:10:10 INFO DAGScheduler: Job 54 finished: print at StreamProcessor.java:53, took 0.063889 s
+25/01/07 20:10:10 INFO JobScheduler: Finished job streaming job 1736280610000 ms.0 from job set of time 1736280610000 ms    
+25/01/07 20:10:10 INFO JobScheduler: Starting job streaming job 1736280610000 ms.1 from job set of time 1736280610000 ms    
+-------------------------------------------
+Time: 1736280610000 ms
+-------------------------------------------
+org.example.entity.CryptoData@63a60597
+
+25/01/07 20:10:10 INFO CheckpointWriter: Deleting hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280560000.bk   
+25/01/07 20:10:10 INFO SparkContext: Starting job: isEmpty at StreamProcessor.java:60
+25/01/07 20:10:10 INFO CheckpointWriter: Checkpoint for time 1736280610000 ms saved to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280610000', took 5739 bytes and 87 ms
+25/01/07 20:10:10 INFO DAGScheduler: Got job 55 (isEmpty at StreamProcessor.java:60) with 1 output partitions
+25/01/07 20:10:10 INFO DAGScheduler: Final stage: ResultStage 55 (isEmpty at StreamProcessor.java:60)
+25/01/07 20:10:10 INFO DAGScheduler: Parents of final stage: List()
+25/01/07 20:10:10 INFO DAGScheduler: Missing parents: List()
+25/01/07 20:10:10 INFO DAGScheduler: Submitting ResultStage 55 (MapPartitionsRDD[62] at map at StreamProcessor.java:56), which has no missing parents
+25/01/07 20:10:10 INFO MemoryStore: Block broadcast_55 stored as values in memory (estimated size 4.9 KiB, free 434.4 MiB)  
+25/01/07 20:10:10 INFO MemoryStore: Block broadcast_55_piece0 stored as bytes in memory (estimated size 2.8 KiB, free 434.4 MiB)
+25/01/07 20:10:10 INFO BlockManagerInfo: Added broadcast_55_piece0 in memory on spark-master:37749 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:10 INFO SparkContext: Created broadcast 55 from broadcast at DAGScheduler.scala:1200
+25/01/07 20:10:10 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 55 (MapPartitionsRDD[62] at map at StreamProcessor.java:56) (first 15 tasks are for partitions Vector(0))
+25/01/07 20:10:10 INFO TaskSchedulerImpl: Adding task set 55.0 with 1 tasks
+25/01/07 20:10:10 INFO TaskSetManager: Starting task 0.0 in stage 55.0 (TID 55, 172.23.0.5, executor 0, partition 0, PROCESS_LOCAL, 7236 bytes)
+25/01/07 20:10:10 INFO BlockManagerInfo: Added broadcast_55_piece0 in memory on 172.23.0.5:33419 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:10 INFO TaskSetManager: Finished task 0.0 in stage 55.0 (TID 55) in 518 ms on 172.23.0.5 (executor 0) (1/1)
+25/01/07 20:10:10 INFO TaskSchedulerImpl: Removed TaskSet 55.0, whose tasks have all completed, from pool
+25/01/07 20:10:10 INFO DAGScheduler: ResultStage 55 (isEmpty at StreamProcessor.java:60) finished in 0.525 s
+25/01/07 20:10:10 INFO DAGScheduler: Job 55 is finished. Cancelling potential speculative or zombie tasks for this job      
+25/01/07 20:10:10 INFO TaskSchedulerImpl: Killing all running tasks in stage 55: Stage finished
+25/01/07 20:10:10 INFO DAGScheduler: Job 55 finished: isEmpty at StreamProcessor.java:60, took 0.528188 s
+25/01/07 20:10:10 INFO SparkContext: Starting job: collect at StreamProcessor.java:62
+25/01/07 20:10:10 INFO DAGScheduler: Got job 56 (collect at StreamProcessor.java:62) with 1 output partitions
+25/01/07 20:10:10 INFO DAGScheduler: Final stage: ResultStage 56 (collect at StreamProcessor.java:62)
+25/01/07 20:10:10 INFO DAGScheduler: Parents of final stage: List()
+25/01/07 20:10:10 INFO DAGScheduler: Missing parents: List()
+25/01/07 20:10:10 INFO DAGScheduler: Submitting ResultStage 56 (MapPartitionsRDD[62] at map at StreamProcessor.java:56), which has no missing parents
+25/01/07 20:10:10 INFO MemoryStore: Block broadcast_56 stored as values in memory (estimated size 4.9 KiB, free 434.4 MiB)
+25/01/07 20:10:10 INFO MemoryStore: Block broadcast_56_piece0 stored as bytes in memory (estimated size 2.8 KiB, free 434.4 MiB)
+25/01/07 20:10:10 INFO BlockManagerInfo: Added broadcast_56_piece0 in memory on spark-master:37749 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:10 INFO SparkContext: Created broadcast 56 from broadcast at DAGScheduler.scala:1200
+25/01/07 20:10:10 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 56 (MapPartitionsRDD[62] at map at StreamProcessor.java:56) (first 15 tasks are for partitions Vector(0))
+25/01/07 20:10:10 INFO TaskSchedulerImpl: Adding task set 56.0 with 1 tasks
+25/01/07 20:10:10 INFO TaskSetManager: Starting task 0.0 in stage 56.0 (TID 56, 172.23.0.5, executor 0, partition 0, PROCESS_LOCAL, 7236 bytes)
+25/01/07 20:10:10 INFO BlockManagerInfo: Added broadcast_56_piece0 in memory on 172.23.0.5:33419 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:11 INFO TaskSetManager: Finished task 0.0 in stage 56.0 (TID 56) in 415 ms on 172.23.0.5 (executor 0) (1/1)
+25/01/07 20:10:11 INFO TaskSchedulerImpl: Removed TaskSet 56.0, whose tasks have all completed, from pool
+25/01/07 20:10:11 INFO DAGScheduler: ResultStage 56 (collect at StreamProcessor.java:62) finished in 0.460 s
+25/01/07 20:10:11 INFO DAGScheduler: Job 56 is finished. Cancelling potential speculative or zombie tasks for this job      
+25/01/07 20:10:11 INFO TaskSchedulerImpl: Killing all running tasks in stage 56: Stage finished
+25/01/07 20:10:11 INFO DAGScheduler: Job 56 finished: collect at StreamProcessor.java:62, took 0.486063 s
+Average Crypto Price: [98384.32]
+25/01/07 20:10:11 INFO JobScheduler: Finished job streaming job 1736280610000 ms.1 from job set of time 1736280610000 ms    
+25/01/07 20:10:11 INFO JobScheduler: Total delay: 1.139 s for time 1736280610000 ms (execution: 1.126 s)
+25/01/07 20:10:11 INFO MapPartitionsRDD: Removing RDD 58 from persistence list
+25/01/07 20:10:11 INFO BlockManager: Removing RDD 58
+25/01/07 20:10:11 INFO KafkaRDD: Removing RDD 57 from persistence list
+25/01/07 20:10:11 INFO MapPartitionsRDD: Removing RDD 59 from persistence list
+25/01/07 20:10:11 INFO BlockManager: Removing RDD 57
+25/01/07 20:10:11 INFO JobGenerator: Checkpointing graph for time 1736280610000 ms
+25/01/07 20:10:11 INFO BlockManager: Removing RDD 59
+25/01/07 20:10:11 INFO DStreamGraph: Updating checkpoint data for time 1736280610000 ms
+25/01/07 20:10:11 INFO DStreamGraph: Updated checkpoint data for time 1736280610000 ms
+25/01/07 20:10:11 INFO CheckpointWriter: Submitted checkpoint of time 1736280610000 ms to writer queue
+25/01/07 20:10:11 INFO CheckpointWriter: Saving checkpoint for time 1736280610000 ms to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280610000'
+25/01/07 20:10:11 INFO CheckpointWriter: Deleting hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280560000
+25/01/07 20:10:11 INFO CheckpointWriter: Checkpoint for time 1736280610000 ms saved to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280610000', took 5693 bytes and 59 ms
+25/01/07 20:10:11 INFO DStreamGraph: Clearing checkpoint data for time 1736280610000 ms
+25/01/07 20:10:11 INFO DStreamGraph: Cleared checkpoint data for time 1736280610000 ms
+25/01/07 20:10:11 INFO ReceivedBlockTracker: Deleting batches:
+25/01/07 20:10:11 INFO FileBasedWriteAheadLog_ReceivedBlockTracker: Attempting to clear 0 old log files in hdfs://namenode:8020/lambda-arch/checkpoint/receivedBlockMetadata older than 1736280600000:
+25/01/07 20:10:11 INFO InputInfoTracker: remove old batch metadata: 1736280590000 ms
+25/01/07 20:10:20 INFO SubscriptionState: [Consumer clientId=consumer-crypto_topic-1, groupId=crypto_topic] Seeking to LATEST offset of partition crypto_topic-0
+25/01/07 20:10:20 INFO SubscriptionState: [Consumer clientId=consumer-crypto_topic-1, groupId=crypto_topic] Resetting offset for partition crypto_topic-0 to position FetchPosition{offset=152, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1001 rack: null)], epoch=absent}}.
+25/01/07 20:10:20 INFO JobScheduler: Added jobs for time 1736280620000 ms
+25/01/07 20:10:20 INFO JobGenerator: Checkpointing graph for time 1736280620000 ms
+25/01/07 20:10:20 INFO DStreamGraph: Updating checkpoint data for time 1736280620000 ms
+25/01/07 20:10:20 INFO JobScheduler: Starting job streaming job 1736280620000 ms.0 from job set of time 1736280620000 ms    
+25/01/07 20:10:20 INFO DStreamGraph: Updated checkpoint data for time 1736280620000 ms
+25/01/07 20:10:20 INFO CheckpointWriter: Submitted checkpoint of time 1736280620000 ms to writer queue
+25/01/07 20:10:20 INFO CheckpointWriter: Saving checkpoint for time 1736280620000 ms to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280620000'
+25/01/07 20:10:20 INFO SparkContext: Starting job: print at StreamProcessor.java:53
+25/01/07 20:10:20 INFO DAGScheduler: Got job 57 (print at StreamProcessor.java:53) with 1 output partitions
+25/01/07 20:10:20 INFO DAGScheduler: Final stage: ResultStage 57 (print at StreamProcessor.java:53)
+25/01/07 20:10:20 INFO DAGScheduler: Parents of final stage: List()
+25/01/07 20:10:20 INFO DAGScheduler: Missing parents: List()
+25/01/07 20:10:20 INFO DAGScheduler: Submitting ResultStage 57 (MapPartitionsRDD[64] at map at StreamProcessor.java:52), which has no missing parents
+25/01/07 20:10:20 INFO MemoryStore: Block broadcast_57 stored as values in memory (estimated size 4.6 KiB, free 434.4 MiB)  
+25/01/07 20:10:20 INFO MemoryStore: Block broadcast_57_piece0 stored as bytes in memory (estimated size 2.7 KiB, free 434.4 MiB)
+25/01/07 20:10:20 INFO BlockManagerInfo: Added broadcast_57_piece0 in memory on spark-master:37749 (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO SparkContext: Created broadcast 57 from broadcast at DAGScheduler.scala:1200
+25/01/07 20:10:20 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 57 (MapPartitionsRDD[64] at map at StreamProcessor.java:52) (first 15 tasks are for partitions Vector(0))
+25/01/07 20:10:20 INFO TaskSchedulerImpl: Adding task set 57.0 with 1 tasks
+25/01/07 20:10:20 INFO TaskSetManager: Starting task 0.0 in stage 57.0 (TID 57, 172.23.0.5, executor 0, partition 0, PROCESS_LOCAL, 7236 bytes)
+25/01/07 20:10:20 INFO BlockManagerInfo: Added broadcast_57_piece0 in memory on 172.23.0.5:33419 (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO TaskSetManager: Finished task 0.0 in stage 57.0 (TID 57) in 33 ms on 172.23.0.5 (executor 0) (1/1)
+25/01/07 20:10:20 INFO TaskSchedulerImpl: Removed TaskSet 57.0, whose tasks have all completed, from pool
+25/01/07 20:10:20 INFO DAGScheduler: ResultStage 57 (print at StreamProcessor.java:53) finished in 0.040 s
+25/01/07 20:10:20 INFO DAGScheduler: Job 57 is finished. Cancelling potential speculative or zombie tasks for this job      
+25/01/07 20:10:20 INFO TaskSchedulerImpl: Killing all running tasks in stage 57: Stage finished
+25/01/07 20:10:20 INFO DAGScheduler: Job 57 finished: print at StreamProcessor.java:53, took 0.049579 s
+-------------------------------------------
+Time: 1736280620000 ms
+-------------------------------------------
+org.example.entity.CryptoData@971c45f
+
+25/01/07 20:10:20 INFO JobScheduler: Finished job streaming job 1736280620000 ms.0 from job set of time 1736280620000 ms    
+25/01/07 20:10:20 INFO JobScheduler: Starting job streaming job 1736280620000 ms.1 from job set of time 1736280620000 ms    
+25/01/07 20:10:20 INFO SparkContext: Starting job: isEmpty at StreamProcessor.java:60
+25/01/07 20:10:20 INFO DAGScheduler: Got job 58 (isEmpty at StreamProcessor.java:60) with 1 output partitions
+25/01/07 20:10:20 INFO DAGScheduler: Final stage: ResultStage 58 (isEmpty at StreamProcessor.java:60)
+25/01/07 20:10:20 INFO DAGScheduler: Parents of final stage: List()
+25/01/07 20:10:20 INFO DAGScheduler: Missing parents: List()
+25/01/07 20:10:20 INFO DAGScheduler: Submitting ResultStage 58 (MapPartitionsRDD[65] at map at StreamProcessor.java:56), which has no missing parents
+25/01/07 20:10:20 INFO MemoryStore: Block broadcast_58 stored as values in memory (estimated size 4.9 KiB, free 434.4 MiB)
+25/01/07 20:10:20 INFO MemoryStore: Block broadcast_58_piece0 stored as bytes in memory (estimated size 2.8 KiB, free 434.3 MiB)
+25/01/07 20:10:20 INFO BlockManagerInfo: Added broadcast_58_piece0 in memory on spark-master:37749 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO BlockManagerInfo: Removed broadcast_56_piece0 on spark-master:37749 in memory (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO SparkContext: Created broadcast 58 from broadcast at DAGScheduler.scala:1200
+25/01/07 20:10:20 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 58 (MapPartitionsRDD[65] at map at StreamProcessor.java:56) (first 15 tasks are for partitions Vector(0))
+25/01/07 20:10:20 INFO TaskSchedulerImpl: Adding task set 58.0 with 1 tasks
+25/01/07 20:10:20 INFO TaskSetManager: Starting task 0.0 in stage 58.0 (TID 58, 172.23.0.5, executor 0, partition 0, PROCESS_LOCAL, 7236 bytes)
+25/01/07 20:10:20 INFO BlockManagerInfo: Removed broadcast_56_piece0 on 172.23.0.5:33419 in memory (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO CheckpointWriter: Deleting hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280570000.bk
+25/01/07 20:10:20 INFO CheckpointWriter: Checkpoint for time 1736280620000 ms saved to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280620000', took 5743 bytes and 143 ms
+25/01/07 20:10:20 INFO BlockManagerInfo: Removed broadcast_52_piece0 on spark-master:37749 in memory (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO BlockManagerInfo: Removed broadcast_52_piece0 on 172.23.0.5:33419 in memory (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO BlockManagerInfo: Added broadcast_58_piece0 in memory on 172.23.0.5:33419 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO BlockManagerInfo: Removed broadcast_57_piece0 on spark-master:37749 in memory (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO BlockManagerInfo: Removed broadcast_57_piece0 on 172.23.0.5:33419 in memory (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO BlockManagerInfo: Removed broadcast_55_piece0 on spark-master:37749 in memory (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO BlockManagerInfo: Removed broadcast_55_piece0 on 172.23.0.5:33419 in memory (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO BlockManagerInfo: Removed broadcast_53_piece0 on spark-master:37749 in memory (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO BlockManagerInfo: Removed broadcast_53_piece0 on 172.23.0.5:33419 in memory (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO BlockManagerInfo: Removed broadcast_54_piece0 on spark-master:37749 in memory (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO BlockManagerInfo: Removed broadcast_54_piece0 on 172.23.0.5:33419 in memory (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO TaskSetManager: Finished task 0.0 in stage 58.0 (TID 58) in 451 ms on 172.23.0.5 (executor 0) (1/1)
+25/01/07 20:10:20 INFO TaskSchedulerImpl: Removed TaskSet 58.0, whose tasks have all completed, from pool
+25/01/07 20:10:20 INFO DAGScheduler: ResultStage 58 (isEmpty at StreamProcessor.java:60) finished in 0.482 s
+25/01/07 20:10:20 INFO DAGScheduler: Job 58 is finished. Cancelling potential speculative or zombie tasks for this job      
+25/01/07 20:10:20 INFO TaskSchedulerImpl: Killing all running tasks in stage 58: Stage finished
+25/01/07 20:10:20 INFO DAGScheduler: Job 58 finished: isEmpty at StreamProcessor.java:60, took 0.488026 s
+25/01/07 20:10:20 INFO SparkContext: Starting job: collect at StreamProcessor.java:62
+25/01/07 20:10:20 INFO DAGScheduler: Got job 59 (collect at StreamProcessor.java:62) with 1 output partitions
+25/01/07 20:10:20 INFO DAGScheduler: Final stage: ResultStage 59 (collect at StreamProcessor.java:62)
+25/01/07 20:10:20 INFO DAGScheduler: Parents of final stage: List()
+25/01/07 20:10:20 INFO DAGScheduler: Missing parents: List()
+25/01/07 20:10:20 INFO DAGScheduler: Submitting ResultStage 59 (MapPartitionsRDD[65] at map at StreamProcessor.java:56), which has no missing parents
+25/01/07 20:10:20 INFO MemoryStore: Block broadcast_59 stored as values in memory (estimated size 4.9 KiB, free 434.4 MiB)  
+25/01/07 20:10:20 INFO MemoryStore: Block broadcast_59_piece0 stored as bytes in memory (estimated size 2.8 KiB, free 434.4 MiB)
+25/01/07 20:10:20 INFO BlockManagerInfo: Added broadcast_59_piece0 in memory on spark-master:37749 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:20 INFO SparkContext: Created broadcast 59 from broadcast at DAGScheduler.scala:1200
+25/01/07 20:10:20 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 59 (MapPartitionsRDD[65] at map at StreamProcessor.java:56) (first 15 tasks are for partitions Vector(0))
+25/01/07 20:10:20 INFO TaskSchedulerImpl: Adding task set 59.0 with 1 tasks
+25/01/07 20:10:20 INFO TaskSetManager: Starting task 0.0 in stage 59.0 (TID 59, 172.23.0.5, executor 0, partition 0, PROCESS_LOCAL, 7236 bytes)
+25/01/07 20:10:20 INFO BlockManagerInfo: Added broadcast_59_piece0 in memory on 172.23.0.5:33419 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:21 INFO TaskSetManager: Finished task 0.0 in stage 59.0 (TID 59) in 476 ms on 172.23.0.5 (executor 0) (1/1)
+25/01/07 20:10:21 INFO TaskSchedulerImpl: Removed TaskSet 59.0, whose tasks have all completed, from pool
+25/01/07 20:10:21 INFO DAGScheduler: ResultStage 59 (collect at StreamProcessor.java:62) finished in 0.485 s
+25/01/07 20:10:21 INFO DAGScheduler: Job 59 is finished. Cancelling potential speculative or zombie tasks for this job      
+25/01/07 20:10:21 INFO TaskSchedulerImpl: Killing all running tasks in stage 59: Stage finished
+25/01/07 20:10:21 INFO DAGScheduler: Job 59 finished: collect at StreamProcessor.java:62, took 0.491179 s
+Average Crypto Price: [98384.32]
+25/01/07 20:10:21 INFO JobScheduler: Finished job streaming job 1736280620000 ms.1 from job set of time 1736280620000 ms    
+25/01/07 20:10:21 INFO JobScheduler: Total delay: 1.091 s for time 1736280620000 ms (execution: 1.081 s)
+25/01/07 20:10:21 INFO MapPartitionsRDD: Removing RDD 61 from persistence list
+25/01/07 20:10:21 INFO BlockManager: Removing RDD 61
+25/01/07 20:10:21 INFO KafkaRDD: Removing RDD 60 from persistence list
+25/01/07 20:10:21 INFO BlockManager: Removing RDD 60
+25/01/07 20:10:21 INFO MapPartitionsRDD: Removing RDD 62 from persistence list
+25/01/07 20:10:21 INFO BlockManager: Removing RDD 62
+25/01/07 20:10:21 INFO JobGenerator: Checkpointing graph for time 1736280620000 ms
+25/01/07 20:10:21 INFO DStreamGraph: Updating checkpoint data for time 1736280620000 ms
+25/01/07 20:10:21 INFO DStreamGraph: Updated checkpoint data for time 1736280620000 ms
+25/01/07 20:10:21 INFO CheckpointWriter: Submitted checkpoint of time 1736280620000 ms to writer queue
+25/01/07 20:10:21 INFO CheckpointWriter: Saving checkpoint for time 1736280620000 ms to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280620000'
+25/01/07 20:10:21 INFO CheckpointWriter: Deleting hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280570000
+25/01/07 20:10:21 INFO CheckpointWriter: Checkpoint for time 1736280620000 ms saved to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280620000', took 5693 bytes and 482 ms
+25/01/07 20:10:21 INFO DStreamGraph: Clearing checkpoint data for time 1736280620000 ms
+25/01/07 20:10:21 INFO DStreamGraph: Cleared checkpoint data for time 1736280620000 ms
+25/01/07 20:10:21 INFO ReceivedBlockTracker: Deleting batches:
+25/01/07 20:10:21 INFO FileBasedWriteAheadLog_ReceivedBlockTracker: Attempting to clear 0 old log files in hdfs://namenode:8020/lambda-arch/checkpoint/receivedBlockMetadata older than 1736280610000:
+25/01/07 20:10:21 INFO InputInfoTracker: remove old batch metadata: 1736280600000 ms
+25/01/07 20:10:30 INFO SubscriptionState: [Consumer clientId=consumer-crypto_topic-1, groupId=crypto_topic] Seeking to LATEST offset of partition crypto_topic-0
+25/01/07 20:10:30 INFO SubscriptionState: [Consumer clientId=consumer-crypto_topic-1, groupId=crypto_topic] Resetting offset for partition crypto_topic-0 to position FetchPosition{offset=153, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1001 rack: null)], epoch=absent}}.
+25/01/07 20:10:30 INFO JobScheduler: Added jobs for time 1736280630000 ms
+25/01/07 20:10:30 INFO JobGenerator: Checkpointing graph for time 1736280630000 ms
+25/01/07 20:10:30 INFO DStreamGraph: Updating checkpoint data for time 1736280630000 ms
+25/01/07 20:10:30 INFO JobScheduler: Starting job streaming job 1736280630000 ms.0 from job set of time 1736280630000 ms    
+25/01/07 20:10:30 INFO DStreamGraph: Updated checkpoint data for time 1736280630000 ms
+25/01/07 20:10:30 INFO CheckpointWriter: Submitted checkpoint of time 1736280630000 ms to writer queue
+25/01/07 20:10:30 INFO CheckpointWriter: Saving checkpoint for time 1736280630000 ms to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280630000'
+25/01/07 20:10:30 INFO SparkContext: Starting job: print at StreamProcessor.java:53
+25/01/07 20:10:30 INFO DAGScheduler: Got job 60 (print at StreamProcessor.java:53) with 1 output partitions
+25/01/07 20:10:30 INFO DAGScheduler: Final stage: ResultStage 60 (print at StreamProcessor.java:53)
+25/01/07 20:10:30 INFO DAGScheduler: Parents of final stage: List()
+25/01/07 20:10:30 INFO DAGScheduler: Missing parents: List()
+25/01/07 20:10:30 INFO DAGScheduler: Submitting ResultStage 60 (MapPartitionsRDD[67] at map at StreamProcessor.java:52), which has no missing parents
+25/01/07 20:10:30 INFO MemoryStore: Block broadcast_60 stored as values in memory (estimated size 4.6 KiB, free 434.4 MiB)  
+25/01/07 20:10:30 INFO MemoryStore: Block broadcast_60_piece0 stored as bytes in memory (estimated size 2.7 KiB, free 434.4 MiB)
+25/01/07 20:10:30 INFO BlockManagerInfo: Added broadcast_60_piece0 in memory on spark-master:37749 (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:30 INFO SparkContext: Created broadcast 60 from broadcast at DAGScheduler.scala:1200
+25/01/07 20:10:30 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 60 (MapPartitionsRDD[67] at map at StreamProcessor.java:52) (first 15 tasks are for partitions Vector(0))
+25/01/07 20:10:30 INFO TaskSchedulerImpl: Adding task set 60.0 with 1 tasks
+25/01/07 20:10:30 INFO TaskSetManager: Starting task 0.0 in stage 60.0 (TID 60, 172.23.0.5, executor 0, partition 0, PROCESS_LOCAL, 7236 bytes)
+25/01/07 20:10:30 INFO BlockManagerInfo: Added broadcast_60_piece0 in memory on 172.23.0.5:33419 (size: 2.7 KiB, free: 434.4 MiB)
+25/01/07 20:10:30 INFO TaskSetManager: Finished task 0.0 in stage 60.0 (TID 60) in 40 ms on 172.23.0.5 (executor 0) (1/1)
+25/01/07 20:10:30 INFO TaskSchedulerImpl: Removed TaskSet 60.0, whose tasks have all completed, from pool
+25/01/07 20:10:30 INFO DAGScheduler: ResultStage 60 (print at StreamProcessor.java:53) finished in 0.052 s
+25/01/07 20:10:30 INFO DAGScheduler: Job 60 is finished. Cancelling potential speculative or zombie tasks for this job      
+25/01/07 20:10:30 INFO TaskSchedulerImpl: Killing all running tasks in stage 60: Stage finished
+25/01/07 20:10:30 INFO DAGScheduler: Job 60 finished: print at StreamProcessor.java:53, took 0.055733 s
+-------------------------------------------
+Time: 1736280630000 ms
+-------------------------------------------
+org.example.entity.CryptoData@5f6171f6
+
+25/01/07 20:10:30 INFO JobScheduler: Finished job streaming job 1736280630000 ms.0 from job set of time 1736280630000 ms    
+25/01/07 20:10:30 INFO SparkContext: Created broadcast 61 from broadcast at DAGScheduler.scala:1200
+25/01/07 20:10:30 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 61 (MapPartitionsRDD[68] at map at StreamProcessor.java:56) (first 15 tasks are for partitions Vector(0))
+25/01/07 20:10:30 INFO TaskSchedulerImpl: Adding task set 61.0 with 1 tasks
+25/01/07 20:10:30 INFO TaskSetManager: Starting task 0.0 in stage 61.0 (TID 61, 172.23.0.5, executor 0, partition 0, PROCESS_LOCAL, 7236 bytes)
+25/01/07 20:10:30 INFO BlockManagerInfo: Added broadcast_61_piece0 in memory on 172.23.0.5:33419 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:30 INFO CheckpointWriter: Deleting hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280580000.bk   
+25/01/07 20:10:30 INFO CheckpointWriter: Checkpoint for time 1736280630000 ms saved to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280630000', took 5740 bytes and 496 ms
+25/01/07 20:10:30 INFO TaskSetManager: Finished task 0.0 in stage 61.0 (TID 61) in 461 ms on 172.23.0.5 (executor 0) (1/1)  
+25/01/07 20:10:30 INFO TaskSchedulerImpl: Removed TaskSet 61.0, whose tasks have all completed, from pool
+25/01/07 20:10:30 INFO DAGScheduler: ResultStage 61 (isEmpty at StreamProcessor.java:60) finished in 0.477 s
+25/01/07 20:10:30 INFO DAGScheduler: Job 61 is finished. Cancelling potential speculative or zombie tasks for this job      
+25/01/07 20:10:30 INFO TaskSchedulerImpl: Killing all running tasks in stage 61: Stage finished
+25/01/07 20:10:30 INFO DAGScheduler: Job 61 finished: isEmpty at StreamProcessor.java:60, took 0.486082 s
+25/01/07 20:10:30 INFO SparkContext: Starting job: collect at StreamProcessor.java:62
+25/01/07 20:10:30 INFO DAGScheduler: Got job 62 (collect at StreamProcessor.java:62) with 1 output partitions
+25/01/07 20:10:30 INFO DAGScheduler: Final stage: ResultStage 62 (collect at StreamProcessor.java:62)
+25/01/07 20:10:30 INFO DAGScheduler: Parents of final stage: List()
+25/01/07 20:10:30 INFO DAGScheduler: Missing parents: List()
+25/01/07 20:10:30 INFO DAGScheduler: Submitting ResultStage 62 (MapPartitionsRDD[68] at map at StreamProcessor.java:56), which has no missing parents
+25/01/07 20:10:30 INFO MemoryStore: Block broadcast_62 stored as values in memory (estimated size 4.9 KiB, free 434.4 MiB)  
+25/01/07 20:10:30 INFO MemoryStore: Block broadcast_62_piece0 stored as bytes in memory (estimated size 2.8 KiB, free 434.4 MiB)
+25/01/07 20:10:30 INFO BlockManagerInfo: Added broadcast_62_piece0 in memory on spark-master:37749 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:30 INFO SparkContext: Created broadcast 62 from broadcast at DAGScheduler.scala:1200
+25/01/07 20:10:30 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 62 (MapPartitionsRDD[68] at map at StreamProcessor.java:56) (first 15 tasks are for partitions Vector(0))
+25/01/07 20:10:30 INFO TaskSchedulerImpl: Adding task set 62.0 with 1 tasks
+25/01/07 20:10:30 INFO TaskSetManager: Starting task 0.0 in stage 62.0 (TID 62, 172.23.0.5, executor 0, partition 0, PROCESS_LOCAL, 7236 bytes)
+25/01/07 20:10:30 INFO BlockManagerInfo: Added broadcast_62_piece0 in memory on 172.23.0.5:33419 (size: 2.8 KiB, free: 434.4 MiB)
+25/01/07 20:10:30 INFO TaskSetManager: Finished task 0.0 in stage 62.0 (TID 62) in 125 ms on 172.23.0.5 (executor 0) (1/1)
+25/01/07 20:10:30 INFO TaskSchedulerImpl: Removed TaskSet 62.0, whose tasks have all completed, from pool 
+25/01/07 20:10:30 INFO DAGScheduler: ResultStage 62 (collect at StreamProcessor.java:62) finished in 0.134 s
+25/01/07 20:10:30 INFO DAGScheduler: Job 62 is finished. Cancelling potential speculative or zombie tasks for this job
+25/01/07 20:10:30 INFO TaskSchedulerImpl: Killing all running tasks in stage 62: Stage finished
+25/01/07 20:10:30 INFO DAGScheduler: Job 62 finished: collect at StreamProcessor.java:62, took 0.136834 s
+Average Crypto Price: [98384.32]
+25/01/07 20:10:30 INFO JobScheduler: Finished job streaming job 1736280630000 ms.1 from job set of time 1736280630000 ms    
+25/01/07 20:10:30 INFO JobScheduler: Total delay: 0.714 s for time 1736280630000 ms (execution: 0.708 s)
+25/01/07 20:10:30 INFO MapPartitionsRDD: Removing RDD 64 from persistence list
+25/01/07 20:10:30 INFO KafkaRDD: Removing RDD 63 from persistence list
+25/01/07 20:10:30 INFO BlockManager: Removing RDD 64
+25/01/07 20:10:30 INFO BlockManager: Removing RDD 63
+25/01/07 20:10:30 INFO MapPartitionsRDD: Removing RDD 65 from persistence list
+25/01/07 20:10:30 INFO JobGenerator: Checkpointing graph for time 1736280630000 ms
+25/01/07 20:10:30 INFO DStreamGraph: Updating checkpoint data for time 1736280630000 ms
+25/01/07 20:10:30 INFO DStreamGraph: Updated checkpoint data for time 1736280630000 ms
+25/01/07 20:10:30 INFO BlockManager: Removing RDD 65
+25/01/07 20:10:30 INFO CheckpointWriter: Saving checkpoint for time 1736280630000 ms to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280630000'
+25/01/07 20:10:30 INFO CheckpointWriter: Submitted checkpoint of time 1736280630000 ms to writer queue
+25/01/07 20:10:30 INFO CheckpointWriter: Deleting hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280580000
+25/01/07 20:10:30 INFO CheckpointWriter: Checkpoint for time 1736280630000 ms saved to file 'hdfs://namenode:8020/lambda-arch/checkpoint/checkpoint-1736280630000', took 5693 bytes and 154 ms
+25/01/07 20:10:30 INFO DStreamGraph: Clearing checkpoint data for time 1736280630000 ms
+25/01/07 20:10:30 INFO DStreamGraph: Cleared checkpoint data for time 1736280630000 ms
+25/01/07 20:10:30 INFO ReceivedBlockTracker: Deleting batches:
+25/01/07 20:10:30 INFO FileBasedWriteAheadLog_ReceivedBlockTracker: Attempting to clear 1 old log files in hdfs://namenode:8020/lambda-arch/checkpoint/receivedBlockMetadata older than 1736280620000: hdfs://namenode:8020/lambda-arch/checkpoint/receivedBlockMetadata/log-1736280551991-1736280611991
+25/01/07 20:10:30 INFO InputInfoTracker: remove old batch metadata: 1736280610000 ms
+25/01/07 20:10:30 INFO FileBasedWriteAheadLog_ReceivedBlockTracker: Cleared log files in hdfs://namenode:8020/lambda-arch/checkpoint/receivedBlockMetadata older than 1736280620000

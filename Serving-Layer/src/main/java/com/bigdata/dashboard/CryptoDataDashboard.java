@@ -10,8 +10,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableScheduling
 @EnableCassandraRepositories("com.bigdata.dashboard.repository")
-public class SensorDataDashboard  {
+public class CryptoDataDashboard  {
     public static void main(String[] args) {
-        SpringApplication.run(SensorDataDashboard.class, args);
+        SpringApplication.run(CryptoDataDashboard.class, args);
     }
 }

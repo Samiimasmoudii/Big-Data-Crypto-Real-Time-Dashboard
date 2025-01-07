@@ -1,42 +1,50 @@
 package com.bigdata.dashboard.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 
 import java.io.Serializable;
-import java.util.Date;
 
-@Table("averagedata")
+@Table("average_data")
 public class AverageData implements Serializable {
 
-	@PrimaryKeyColumn(name = "id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
-	private String id;
+    @PrimaryKeyColumn(name = "ticker", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
+    private String ticker;
 
-	@Column(value = "temperature")
-	private double temperature;
+    @Column("average_price")
+    private double averagePrice;
 
-	@Column(value = "humidity")
-	private double humidity;
+    @Column("average_volume")
+    private double averageVolume;
 
-	public String getId() {
-		return id;
-	}
+    public String getTicker() {
+        return ticker;
+    }
 
-	public double getTemperature() {
-		return temperature;
-	}
+    public void setTicker(String ticker) {
+        this.ticker = ticker;
+    }
 
-	public double getHumidity() {
-		return humidity;
-	}
+    public double getAveragePrice() {
+        return averagePrice;
+    }
 
+    public void setAveragePrice(double averagePrice) {
+        this.averagePrice = averagePrice;
+    }
 
-	@Override
-	public String toString() {
-		return "AverageData [id=" + id + ", temperature=" + temperature + ", humidity=" + humidity  +" ]";
-	}
+    public double getAverageVolume() {
+        return averageVolume;
+    }
 
+    public void setAverageVolume(double averageVolume) {
+        this.averageVolume = averageVolume;
+    }
+
+    @Override
+    public String toString() {
+        return "AverageData [ticker=" + ticker + ", averagePrice=" + averagePrice + ", averageVolume=" + averageVolume + "]";
+    }
 }

@@ -54,7 +54,7 @@ public class ProcessorUtils {
         columnNameMappings.put("timestamp", "timestamp");
 
         // Save data to Cassandra
-        javaFunctions(dataStream).writerBuilder("CryptoDatakeyspace", "cryptodata",
+        javaFunctions(dataStream).writerBuilder("cryptoDatakeyspace", "cryptodata",
                 CassandraJavaUtil.mapToRow(CryptoData.class, columnNameMappings)).saveToCassandra();
     }
 
@@ -111,7 +111,7 @@ public class ProcessorUtils {
     // Save AverageData to Cassandra
     public static void saveAvgToCassandra(JavaRDD<AverageData> rdd) {
         CassandraJavaUtil.javaFunctions(rdd)
-                .writerBuilder("CryptoDatakeyspace", "averagedata", CassandraJavaUtil.mapToRow(AverageData.class))
+                .writerBuilder("cryptoDatakeyspace", "averagedata", CassandraJavaUtil.mapToRow(AverageData.class))
                 .saveToCassandra();
     }
 

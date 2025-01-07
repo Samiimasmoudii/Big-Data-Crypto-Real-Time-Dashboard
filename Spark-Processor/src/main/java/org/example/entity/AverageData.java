@@ -4,31 +4,28 @@ import java.io.Serializable;
 
 public class AverageData implements Serializable {
 
-	private String id;
-	private double temperature;
+    private String id;
+    private double averagePrice;
+    private double volume;
 
-	private double humidity;
+    public AverageData() {
+    }
 
-	public AverageData() {
+    public AverageData(String id, double averagePrice, double volume) {
+        this.id = id;
+        this.averagePrice = averagePrice;
+        this.volume = volume;
+    }
 
-	}
+    public String getId() {
+        return id;
+    }
 
-	public AverageData(String id, double temperature, double humidity) {
-		super();
-		this.id = id;
-		this.temperature = temperature;
-		this.humidity = humidity;
-	}
+    public double getAveragePrice() {
+        return averagePrice;
+    }
 
-	public String getId() {
-		return id;
-	}
-
-	public double getTemperature() {
-		return temperature;
-	}
-
-	public double getHumidity() {
-		return humidity;
-	}
+    public double getVolume() {
+        return volume;
+    }
 }

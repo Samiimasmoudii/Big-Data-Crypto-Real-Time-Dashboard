@@ -39,12 +39,13 @@ public class DataService {
         List<Double> volumes = new ArrayList<>();
 
         Long time = new Date().getTime();
+        String ticker="BTC";
         Date date = new Date(time - time % (60 * 1000)); // get data from the last minute
 
         // Fetch AverageData and AggregatedData from the repositories
-        averageDataRepository.findByTimestampAfter(date).forEach(e -> {
+        averageDataRepository.findByTicker(ticker).forEach(e -> {
             averagePrices.add(e.getAveragePrice());
-            volumes.add(e.getVolume());
+            volumes.add(e.getAverageVolume());
         });
 
         // Fallback values if no data is found

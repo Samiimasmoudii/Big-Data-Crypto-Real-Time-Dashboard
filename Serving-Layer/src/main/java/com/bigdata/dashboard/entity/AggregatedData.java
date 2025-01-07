@@ -1,5 +1,6 @@
 package com.bigdata.dashboard.entity;
 
+import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
@@ -10,7 +11,7 @@ import java.util.Date;
 @Table("aggregated_data")
 public class AggregatedData implements Serializable {
 
-    @PrimaryKeyColumn(name = "ticker", ordinal = 0)
+    @PrimaryKeyColumn(name = "ticker", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     private String ticker;
 
     @PrimaryKeyColumn(name = "period_start", ordinal = 1)
@@ -22,7 +23,6 @@ public class AggregatedData implements Serializable {
     @Column("total_volume")
     private double totalVolume;
 
-    // Getters and Setters
     public String getTicker() {
         return ticker;
     }

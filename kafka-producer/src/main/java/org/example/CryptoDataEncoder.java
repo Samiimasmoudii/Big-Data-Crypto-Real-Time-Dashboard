@@ -15,8 +15,9 @@ public class CryptoDataEncoder implements Encoder<CryptoData> {
 
     public byte[] toBytes(CryptoData event) {
         try {
+            // Serialize the data, but do not change timestamp format here
             String msg = objectMapper.writeValueAsString(event);
-            System.out.println("Serialized Data: " + msg);
+            System.out.println("Serialized Data: " + msg); // Just log the JSON string
             return msg.getBytes();
         } catch (JsonProcessingException e) {
             System.out.println("Error in Serialization: " + e.getMessage());

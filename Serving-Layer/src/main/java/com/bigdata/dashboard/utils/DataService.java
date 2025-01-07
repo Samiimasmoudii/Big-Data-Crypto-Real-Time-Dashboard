@@ -9,55 +9,54 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-
-import com.bigdata.dashboard.repository.TemperatureRepository;
-import com.bigdata.dashboard.repository.HumidityRepository;
+import com.bigdata.dashboard.repository.AverageDataRepository;
+import com.bigdata.dashboard.repository.AggregatedDataRepository;
+import com.bigdata.dashboard.entity.AverageData;
+import com.bigdata.dashboard.entity.AggregatedData;
 
 /**
- * Service class to send data messages to dashboard ui at fixed interval using
+ * Service class to send crypto data messages to dashboard UI at fixed intervals using
  * web-socket.
  */
 @Service
 public class DataService {
 
-	@Autowired
-	private SimpMessagingTemplate template;
+    @Autowired
+    private SimpMessagingTemplate template;
 
-	@Autowired
-	private TemperatureRepository temperatureRepository;
+    @Autowired
+    private AverageDataRepository averageDataRepository;
 
-	@Autowired
-	private HumidityRepository humidityRepository;
+    @Autowired
+    private AggregatedDataRepository aggregatedDataRepository;
 
-	// Method sends data message in every 10 seconds.
-	@Scheduled(fixedRate = 10000)
-	public void trigger() {
-		System.out.println("triggered");
-		List<Double> temperatures = new ArrayList<>();
-		List<Double> humidities = new ArrayList<>();
+    // Method sends data message in every 10 seconds.
+    @Scheduled(fixedRate = 10000)
+    public void trigger() {
+        System.out.println("triggered");
 
-		Long time = new Date().getTime();
-		Date date = new Date(time - time % ( 60 * 1000)); // get data from the last minute
-		//Date date = new Date(time - time % (2 * 24 * 60 * 60 * 1000));
+        List<Double> averagePrices = new ArrayList<>();
+        List<Double> volumes = new ArrayList<>();
 
-		temperatureRepository.findTemperatureByDate(date).forEach(e -> temperatures.add(e.getValue()));
-		humidityRepository.findHumidityByDate(date).forEach(e -> humidities.add(e.getValue()));
+        Long time = new Date().getTime();
+        Date date = new Date(time - time % (60 * 1000)); // get data from the last minute
 
-		// temperatureRepository.findTemperatureByDate(date).forEach(e ->
-		// temperatures.add(e.getValue()));
-		// humidityRepository.findHumidityByDate(date).forEach(e ->
-		// humidities.add(e.getValue()));
+        // Fetch AverageData and AggregatedData from the repositories
+        averageDataRepository.findByTimestampAfter(date).forEach(e -> {
+            averagePrices.add(e.getAveragePrice());
+            volumes.add(e.getVolume());
+        });
 
-		double temperature = temperatures.size() > 0 ? temperatures.get(temperatures.size() - 1) : 20;
-		double humidity = humidities.size() > 0 ? humidities.get(humidities.size() - 1) : 80;
+        // Fallback values if no data is found
+        double averagePrice = averagePrices.size() > 0 ? averagePrices.get(averagePrices.size() - 1) : 0;
+        double volume = volumes.size() > 0 ? volumes.get(volumes.size() - 1) : 0;
 
-		// prepare response
-		Response response = new Response();
-		response.setHumidity(humidity);
-		response.setTemperature(temperature);
+        // Prepare response with the latest data
+        Response response = new Response();
+        response.setAveragePrice(averagePrice);
+        response.setVolume(volume);
 
-		// send to ui
-		this.template.convertAndSend("/topic/data", response);
-	}
-
+        // Send the response to the UI via WebSocket
+        this.template.convertAndSend("/topic/data", response);
+    }
 }

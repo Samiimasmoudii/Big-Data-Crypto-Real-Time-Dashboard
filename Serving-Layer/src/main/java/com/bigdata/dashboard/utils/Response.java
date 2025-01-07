@@ -1,29 +1,30 @@
 package com.bigdata.dashboard.utils;
 
 import java.io.Serializable;
-import java.util.List;
-
-
 
 public class Response implements Serializable {
-    private double temperature;
-    private double humidity;
+    
+    private double averagePrice;
+    private double volume;
 
-    public double getTemperature() {
-        return temperature;
+    public double getAveragePrice() {
+        return averagePrice;
     }
 
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
+    public void setAveragePrice(double averagePrice) {
+        this.averagePrice = averagePrice;
     }
 
-    public double getHumidity() {
-        return humidity;
+    public double getVolume() {
+        return volume;
     }
 
-    public void setHumidity(double humidity) {
-        this.humidity = humidity;
+    public void setVolume(double volume) {
+        this.volume = volume;
     }
 
-   
+    @Override
+    public String toString() {
+        return "Response [averagePrice=" + averagePrice + ", volume=" + volume + "]";
+    }
 }

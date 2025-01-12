@@ -2,6 +2,7 @@ package org.example.processor;
 
 import java.util.*;
 import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaRDD;
 //import org.apache.spark.SparkContext;
 //import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -13,16 +14,24 @@ import org.apache.spark.streaming.kafka010.*;
 import org.example.entity.CryptoData;
 import org.example.util.CryptoDataDeserializer;
 import org.example.util.PropertyFileReader;
+
+import com.datastax.spark.connector.japi.CassandraJavaUtil;
+
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
 public class StreamProcessor {
+    
+   
+        
+
+    
 
     public static void main(String[] args) throws Exception {
 
         // Read configuration from properties file
-        String file = "spark-processor.properties";
+        String file = "spark-crypto-processor.properties";
         Properties prop = PropertyFileReader.readPropertyFile(file);
 
         SparkConf conf = ProcessorUtils.getSparkConf(prop);
@@ -50,10 +59,11 @@ public class StreamProcessor {
 
         // Extract crypto data from Kafka stream
         JavaDStream<CryptoData> cryptoDataStream = stream.map(v -> v.value());
-        cryptoDataStream.print();  // Print data to console (for debugging)
+        cryptoDataStream.print(); // Print data to console (for debugging)
 
         // Example transformation: Calculate average price from incoming crypto data
-        JavaDStream<Double> priceStream = cryptoDataStream.map(v -> (v.getOpen() + v.getClose()) / 2);  // Average price of crypto
+        JavaDStream<Double> priceStream = cryptoDataStream.map(v -> (v.getOpen() + v.getClose()) / 2); // Average price
+                                                                                                       // of crypto
 
         // You can save the price data or apply further transformations
         priceStream.foreachRDD(rdd -> {
@@ -64,7 +74,17 @@ public class StreamProcessor {
                 // For example: ProcessorUtils.saveAvgToCassandra(rdd);
             }
         });
+        
+        List<CryptoData> testList = new ArrayList<>();
+        
+        testList.add(new CryptoData("BTC", 50000.0, 50500.0, 49500.0, 50200.0, 1000.0,
+                new java.sql.Date(System.currentTimeMillis())));
+      
+        JavaRDD<CryptoData> testRDD = sc.parallelize(testList);
 
+        CassandraJavaUtil.javaFunctions(testRDD)
+                .writerBuilder("cryptodatakeyspace", "crypto_data", CassandraJavaUtil.mapToRow(CryptoData.class))
+                .saveToCassandra();
         // Additional processing steps if needed (e.g., filtering, mapping, etc.)
 
         streamingContext.start();

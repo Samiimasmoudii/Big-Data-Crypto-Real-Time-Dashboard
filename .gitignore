@@ -3,8 +3,11 @@ data/namenode
 data/spark
 /.vscode
 .fake
-/kafka-producer/polygon-api-key.txt
-/kafka-producer/target/*
+kafka-producer/target/*
+
+kafka-producer/target/classes*
 .vscode
 
 *.jar
+*.class
+kafka-producer/target/classes/org/example/*

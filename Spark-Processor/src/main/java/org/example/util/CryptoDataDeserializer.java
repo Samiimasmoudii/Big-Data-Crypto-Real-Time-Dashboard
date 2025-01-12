@@ -5,7 +5,7 @@ import org.example.entity.CryptoData;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import java.util.Date;
+import java.sql.Date;
 
 public class CryptoDataDeserializer implements Deserializer<CryptoData> {
 
@@ -17,7 +17,7 @@ public class CryptoDataDeserializer implements Deserializer<CryptoData> {
         JsonObject jsonObject = jsonElement.getAsJsonObject();
 
         // Parse fields manually
-        String id = jsonObject.get("ticker").getAsString();
+        String ticker = jsonObject.get("ticker").getAsString();
         double open = jsonObject.get("open").getAsDouble();
         double high = jsonObject.get("high").getAsDouble();
         double low = jsonObject.get("low").getAsDouble();
@@ -25,12 +25,11 @@ public class CryptoDataDeserializer implements Deserializer<CryptoData> {
         double volume = jsonObject.get("volume").getAsDouble();
         
         // MarketCap is missing, set default value or remove from CryptoData class if unnecessary
-        double marketCap = 0.0;  // Default value or you can remove the field entirely
-        
+       
         long timestampMillis = jsonObject.get("timestamp").getAsLong();
         Date timestamp = new Date(timestampMillis);  // Convert long to Date
 
         // Create CryptoData object
-        return new CryptoData(id, open, high, low, close, volume, marketCap, timestamp);
+        return new CryptoData(ticker,open,high,low,close, volume, timestamp);
     }
 }

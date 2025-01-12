@@ -46,16 +46,19 @@ public class ProcessorUtils {
         // Map Cassandra table columns for CryptoData
         HashMap<String, String> columnNameMappings = new HashMap<>();
         columnNameMappings.put("ticker", "ticker");
-        columnNameMappings.put("open", "open");
+        columnNameMappings.put("timestamp", "timestamp");
         columnNameMappings.put("close", "close");
         columnNameMappings.put("high", "high");
         columnNameMappings.put("low", "low");
+        columnNameMappings.put("open", "open");
         columnNameMappings.put("volume", "volume");
-        columnNameMappings.put("timestamp", "timestamp");
 
         // Save data to Cassandra
-        javaFunctions(dataStream).writerBuilder("cryptoDatakeyspace", "cryptodata",
+        javaFunctions(dataStream).writerBuilder("cryptodatakeyspace", "crypto_data",
                 CassandraJavaUtil.mapToRow(CryptoData.class, columnNameMappings)).saveToCassandra();
+
+        System.out.println(
+                "================================================ SAVED CRYPTO DATA TO CASSANDRA =================================================");
     }
 
     // Save data to HDFS
@@ -79,29 +82,58 @@ public class ProcessorUtils {
     // Transform a Row into a CryptoData object
     public static CryptoData transformData(Row row) {
         System.out.println(row);
-        return new CryptoData(row.getString(0), row.getDouble(1), row.getDouble(2), row.getDouble(3), row.getDouble(4),
-                row.getDouble(5), 0, new Date(row.getLong(6)));
+        
+        // Get the column values using the column names (based on your mappings)
+        String ticker = row.getString(row.fieldIndex("ticker"));
+        double close = row.getDouble(row.fieldIndex("close"));
+        double high = row.getDouble(row.fieldIndex("high"));
+        double low = row.getDouble(row.fieldIndex("low"));
+        double open = row.getDouble(row.fieldIndex("open"));
+        double volume = row.getDouble(row.fieldIndex("volume"));
+        
+        // Since the timestamp is a long, it seems like you're getting milliseconds since epoch
+        long timestampMillis = row.getLong(row.fieldIndex("timestamp"));
+        
+        // Create a new Date object from timestamp (in milliseconds)
+        Date timestamp = new Date(timestampMillis);
+    
+        // Return a new CryptoData object (with all expected parameters)
+        return new CryptoData(ticker,open,high,low,close, volume, timestamp);
     }
+    
 
-    // Run batch processing to calculate average values (e.g., average open/close
-    // price)
     public static List<AverageData> runBatch(SparkSession sparkSession, String saveFile) {
         System.out.println("Running Batch Processing");
 
+        // Reading parquet file
         var dataFrame = sparkSession.read().parquet(saveFile);
         System.out.println(dataFrame);
+
+        // Converting DataFrame to RDD of CryptoData objects
         JavaRDD<CryptoData> rdd = dataFrame.javaRDD().map(row -> ProcessorUtils.transformData(row));
 
+        // Extracting Open, Close, and Timestamp fields
         JavaRDD<Double> openPrices = rdd.map(CryptoData::getOpen);
         JavaRDD<Double> closePrices = rdd.map(CryptoData::getClose);
 
+        // Converting timestamp to java.sql.Date and calculating average timestamp
+        JavaRDD<Date> timestamps = rdd.map(data -> new Date(data.getTimestamp().getTime())); // Conversion to
+                                                                                             // java.sql.Date
+        double avgTimestamp = timestamps.mapToDouble(Date::getTime).reduce((t1, t2) -> t1 + t2) / timestamps.count();
+
+        // Calculating averages for Open and Close Prices
         double avgOpen = openPrices.reduce((value1, value2) -> value1 + value2) / openPrices.count();
         double avgClose = closePrices.reduce((value1, value2) -> value1 + value2) / closePrices.count();
 
+        // Printing out the calculated averages
         System.out.println("Avg Open Price : " + avgOpen);
         System.out.println("Avg Close Price : " + avgClose);
+        System.out.println("Avg Timestamp : " + avgTimestamp);
 
-        AverageData avgData = new AverageData("0", avgOpen, avgClose);
+        // Creating AverageData object with timestamp as double
+        AverageData avgData = new AverageData("BTC", avgTimestamp, avgOpen, avgClose);
+
+        // Returning the list of AverageData
         List<AverageData> averageDataList = new ArrayList<>();
         averageDataList.add(avgData);
 
@@ -110,9 +142,20 @@ public class ProcessorUtils {
 
     // Save AverageData to Cassandra
     public static void saveAvgToCassandra(JavaRDD<AverageData> rdd) {
+
         CassandraJavaUtil.javaFunctions(rdd)
-                .writerBuilder("cryptoDatakeyspace", "averagedata", CassandraJavaUtil.mapToRow(AverageData.class))
+                .writerBuilder("cryptodatakeyspace", "average_data", CassandraJavaUtil.mapToRow(AverageData.class))
                 .saveToCassandra();
+
+        if (rdd.isEmpty()) {
+            System.out.println("RDD is empty. No data to save.");
+        } else {
+            System.out.println("RDD contains " + rdd.count() + " records.");
+        }
+
+        // Print a huge line with the message
+        System.out.println(
+                "================================================ SAVED  AVG TO CASSANDRA =================================================");
     }
 
 }

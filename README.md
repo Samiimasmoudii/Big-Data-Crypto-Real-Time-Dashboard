@@ -60,7 +60,7 @@ docker exec -it kafka-iot java -jar kafka-crypto-producer-1.0.0.jar
 Copy And execute the spark producer
 ```bash
 docker cp spark-processor-1.0.0.jar spark-master:/
-docker exec spark-master /spark/bin/spark-submit --class org.example.processor.StreamProcessor /spark-processor-1.0.0.jar
+docker exec spark-master /spark/bin/spark-submit --class org.example.processor.StreamProcessor /spark-crypto-processor-1.0.0.jar
 ```
 
 
@@ -73,8 +73,11 @@ docker exec spark-master /spark/bin/spark-submit --class org.example.processor.S
 ```bash
 docker exec -it cassandra-iot cqlsh -u cassandra -p cassandra
 DESCRIBE KEYSPACES;
-SELECT * FROM sensordatakeyspace.temperature;
-SELECT * FROM sensordatakeyspace.humidity;
+SELECT * FROM cryptodatakeyspace.crypto_data;
+
+SELECT * FROM cryptodatakeyspace.aggregated_data;
+
+SELECT * FROM cryptodatakeyspace.average_data;
 ---
 
 ## Technologies Used

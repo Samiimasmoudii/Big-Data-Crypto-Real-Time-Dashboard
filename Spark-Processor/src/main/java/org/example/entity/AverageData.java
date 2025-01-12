@@ -4,28 +4,37 @@ import java.io.Serializable;
 
 public class AverageData implements Serializable {
 
-    private String id;
+    private String ticker;
+    private Double timestamps;
     private double averagePrice;
-    private double volume;
+    private double avgClose;
 
+    // Default constructor
     public AverageData() {
     }
 
-    public AverageData(String id, double averagePrice, double volume) {
-        this.id = id;
+    // Parameterized constructor
+    public AverageData(String ticker, Double timestamps, double averagePrice, double avgClose) {
+        this.ticker = ticker;
+        this.timestamps = timestamps;
         this.averagePrice = averagePrice;
-        this.volume = volume;
+        this.avgClose = avgClose;
     }
 
-    public String getId() {
-        return id;
+    // Getters
+    public String getTicker() {
+        return ticker;
+    }
+
+    public Double getTimestamps() {
+        return timestamps;
     }
 
     public double getAveragePrice() {
         return averagePrice;
     }
 
-    public double getVolume() {
-        return volume;
+    public double getavgClose() {
+        return avgClose;
     }
 }

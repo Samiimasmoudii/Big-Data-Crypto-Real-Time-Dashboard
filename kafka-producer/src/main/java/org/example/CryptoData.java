@@ -1,7 +1,6 @@
 package org.example;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CryptoData implements Serializable {
@@ -58,7 +57,6 @@ public class CryptoData implements Serializable {
     // Override toString() to format the timestamp as a readable date
     @Override
     public String toString() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         
         return "CryptoData{" +
                 "ticker='" + ticker + '\'' +

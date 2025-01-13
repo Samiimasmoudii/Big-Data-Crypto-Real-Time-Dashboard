@@ -75,6 +75,8 @@ public class StreamProcessor {
             }
         });
         
+
+        ///////////////TEST DATA/////////////////////
         List<CryptoData> testList = new ArrayList<>();
         
         testList.add(new CryptoData("BTC", 50000.0, 50500.0, 49500.0, 50200.0, 1000.0,

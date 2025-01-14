@@ -10,7 +10,7 @@ services:
   zookeeper:
     image: confluentinc/cp-zookeeper:5.1.0
     hostname: zookeeper
-    container_name: zookeeper-iot
+    container_name: zookeeper-crypto
     ports:
       - 2182:2181
     networks:
@@ -37,7 +37,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 
     hostname: kafka
-    container_name: kafka-iot
+    container_name: kafka-crypto
     networks:
       - netw
     restart: always
@@ -53,7 +53,7 @@ services:
     environment:
       - "MAX_HEAP_SIZE=256M"
       - "HEAP_NEWSIZE=128M"
-    container_name: cassandra-iot
+    container_name: cassandra-crypto
     volumes:
       - ./data/schema.cql:/schema.cql
 
